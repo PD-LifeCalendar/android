@@ -76,6 +76,12 @@ dependencies {
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
 
+    // User permission
+    implementation 'com.karumi:dexter:6.2.2'
+
+    // Coil - Image loading library
+    implementation 'io.coil-kt:coil:1.1.1'
+
     implementation project(path: ':domain')
     implementation project(path: ':data')
 }
