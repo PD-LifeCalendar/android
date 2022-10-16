@@ -12,4 +12,9 @@
     <string name="enter_your_email_label">Введите свою почту</string>
     <string name="enter_your_name_label">Введите свое имя</string>
     <string name="email_explanation_text">На эту почту будет отправлен код подтверждения</string>
+    <string name="greeting">Это приложение поможет тебе спланировать свою жизнь на многие годы вперед и оставить в памяти светлые моменты твоей жизни.</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="skip">Пропустить</string>
+    <string name="mail_code">Введите код из письма</string>
+    <string name="confirm">Подтвердить</string>
 </resources>
