@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/greetingPage">
+
+    <fragment
+        android:id="@+id/greetingPage"
+        android:name="com.example.lifecalendar.ui.fragment.GreetingPageFragment"
+        android:label="GreetingPage" >
+        <action
+            android:id="@+id/action_greetingPage_to_greetingPageSecond"
+            app:destination="@id/greetingPageSecond" />
+    </fragment>
+    <fragment
+        android:id="@+id/greetingPageSecond"
+        android:name="com.example.lifecalendar.ui.fragment.GreetingPageSecondFragment"
+        android:label="GreetingPageSecond" />
+</navigation>

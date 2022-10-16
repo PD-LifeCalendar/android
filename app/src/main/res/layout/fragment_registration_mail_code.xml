@@ -5,8 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,49 +33,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_circle_active"
-            android:layout_marginEnd="12dp"
-            />
+            android:layout_marginEnd="12dp" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_circle_inactive"
-            android:layout_marginEnd="12dp"
-            />
+            android:layout_marginEnd="12dp" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_circle_inactive"
-            android:layout_marginEnd="12dp"
-            />
+            android:layout_marginEnd="12dp" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_circle_inactive"
-            android:layout_marginEnd="12dp"
-            />
+            android:layout_marginEnd="12dp" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_circle_inactive"
-            android:layout_marginEnd="12dp"
-            />
+            android:layout_marginEnd="12dp" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_circle_inactive"
-            android:layout_marginEnd="12dp"
-            />
+            android:layout_marginEnd="12dp" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_circle_inactive"
-            />
+            android:src="@drawable/ic_circle_inactive" />
     </LinearLayout>
 
     <ImageView
@@ -106,7 +97,6 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailInput"
         style="@style/TextAppearance.LifeCalendar.TextInput.Light"
-
         android:hint="@string/four_num"
         android:layout_marginTop="32dp"
         android:layout_width="260dp"
@@ -114,19 +104,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mail_code"
-        app:helperText="Не получил код 30 сек."
-        >
+        app:helperText="Не получил код 30 сек.">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-
-            />
-
-
+            android:paddingEnd="12dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

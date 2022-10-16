@@ -26,4 +26,5 @@
     <string name="month">ММ</string>
     <string name="year">ГГГГ</string>
     <string name="choose_photo_label">Выберите фото</string>
+    <string name="back_label">Назад</string>
 </resources>
