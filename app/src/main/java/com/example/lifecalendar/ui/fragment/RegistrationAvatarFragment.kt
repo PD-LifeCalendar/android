@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import coil.load
+import coil.transform.CircleCropTransformation
 import com.example.lifecalendar.databinding.FragmentRegistrationAvatarBinding
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
@@ -32,21 +33,25 @@ class RegistrationAvatarFragment : Fragment() {
         private const val GALLERY_REQUEST_CODE = 2
     }
     
-    
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentRegistrationAvatarBinding.inflate(inflater, container, false)
-        return binding.root
         
+        binding.imagePlace.setOnClickListener {
+            showPhotoChoosingAlertDialog()
+        }
+    
         binding.addImageFab.setOnClickListener {
             showPhotoChoosingAlertDialog()
         }
+        
+        return binding.root
     }
     
     private fun showPhotoChoosingAlertDialog() {
-        showPhotoChoosingAlertDialog()
+//        showPhotoChoosingAlertDialog()
         val pictureDialogItems = arrayOf("Выбрать фото из галереи", "Сделать фото на камеру")
         AlertDialog.Builder(requireContext())
             .setTitle("Select Action")
@@ -127,19 +132,19 @@ class RegistrationAvatarFragment : Fragment() {
             when (requestCode) {
                 CAMERA_REQUEST_CODE -> {
                     val bitmap = data?.extras?.get("data") as Bitmap
-                    binding.imagePlace.load(bitmap) /*{
+                    binding.imagePlace.load(bitmap) {
                         crossfade(true)
                         crossfade(1000)
                         transformations(CircleCropTransformation())
-                    }*/
+                    }
                 }
                 
                 GALLERY_REQUEST_CODE -> {
-                    binding.imagePlace.load(data?.data) /*{
+                    binding.imagePlace.load(data?.data) {
                         crossfade(true)
                         crossfade(1000)
                         transformations(CircleCropTransformation())
-                    }*/
+                    }
                 }
             }
         }
