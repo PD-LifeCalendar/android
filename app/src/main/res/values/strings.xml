@@ -12,4 +12,5 @@
     <string name="enter_your_email_label">Введите свою почту</string>
     <string name="enter_your_name_label">Введите свое имя</string>
     <string name="email_explanation_text">На эту почту будет отправлен код подтверждения</string>
+    <string name="choose_photo_label">Выберите фото</string>
 </resources>
