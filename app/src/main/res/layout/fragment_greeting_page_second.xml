@@ -10,10 +10,10 @@
         android:layout_width="wrap_content"
         android:layout_height="10dp"
         android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/firstImage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/firstImage">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -24,25 +24,24 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_circle_active"
             android:layout_marginEnd="12dp"
-            />
+            android:src="@drawable/ic_circle_active" />
+
     </LinearLayout>
 
     <TextView
         android:id="@+id/skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        android:fontFamily="@font/nunito_medium"
-        android:text="Пропустить"
-        android:textColor="@color/dark_orange_yellow"
         android:layout_marginTop="35dp"
         android:layout_marginRight="15.7dp"
+        android:fontFamily="@font/nunito_medium"
+        android:text="Пропустить"
+        android:textAlignment="center"
+        android:textColor="@color/dark_orange_yellow"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/firstImage"
@@ -50,9 +49,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="31.4dp"
         android:src="@drawable/illustration_greeting_second"
+        app:layout_constraintBottom_toTopOf="@id/welcome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/welcome"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/welcome"
@@ -60,10 +59,9 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/comfortaa_regular"
         android:text="Для кого это приложение"
-
         android:textAlignment="center"
-        android:textSize="22sp"
         android:textColor="@color/black"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,9 +72,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/nunito_regular"
-        android:textColor="@color/grey_80"
         android:text="Возможно, у вас есть некоторые цели, например, вы хотите написать книгу к 50 годам? Отлично! Поставьте себе цель на определённый год вашей жизни."
         android:textAlignment="center"
+        android:textColor="@color/grey_80"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,39 +83,34 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Назад"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textColor="#C28327"
-        android:fontFamily="@font/nunito_medium"
         android:layout_marginLeft="15.7dp"
         android:layout_marginBottom="31.4dp"
+        android:fontFamily="@font/nunito_medium"
         android:paddingLeft="53.75dp"
-        android:paddingRight="53.75dp"
         android:paddingTop="12.5dp"
+        android:paddingRight="53.75dp"
         android:paddingBottom="12.5dp"
+        android:text="Назад"
+        android:textAlignment="center"
+        android:textColor="#C28327"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-
-        />
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/next_btn"
         style="@style/Widget.LifeCalendar.Button"
-        android:textSize="18sp"
-
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="@string/next"
-        android:textAlignment="center"
-        android:fontFamily="@font/nunito_medium"
-        android:layout_marginBottom="31.4dp"
         android:layout_marginRight="15.7dp"
+        android:layout_marginBottom="31.4dp"
+        android:fontFamily="@font/nunito_medium"
         android:paddingLeft="53.75dp"
         android:paddingRight="53.75dp"
-
+        android:text="@string/next"
+        android:textAlignment="center"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        />
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
