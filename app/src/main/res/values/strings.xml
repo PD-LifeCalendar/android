@@ -18,4 +18,7 @@
     <string name="mail_code">Введите код из письма</string>
     <string name="confirm">Подтвердить</string>
     <string name="four_num">Введите 4 цифры.</string>
+    <string name="enter_password">Введите пароль</string>
+    <string name="password">Пароль</string>
+    <string name="password_repeat">Повторите пароль</string>
 </resources>
