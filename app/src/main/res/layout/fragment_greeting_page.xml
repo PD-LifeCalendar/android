@@ -19,6 +19,33 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/firstImage">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_circle_active"
+            android:layout_marginEnd="12dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_circle_inactive"
+            />
+
+
+
+
+    </LinearLayout>
     <ImageView
         android:id="@+id/firstImage"
         android:layout_width="wrap_content"
