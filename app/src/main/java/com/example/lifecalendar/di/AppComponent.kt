@@ -6,4 +6,6 @@ import dagger.Component
 
 @Component(modules = [AppModule::class, DataModule::class, DomainModule::class])
 interface AppComponent {
+    fun inject(loginFragment: LoginFragment)
+    fun inject(lifeCalendarFragment: LifeCalendarFragment)
 }

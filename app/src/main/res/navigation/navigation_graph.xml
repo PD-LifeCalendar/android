@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/greetingFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/greetingFragment"
-        android:name="com.example.lifecalendar.ui.fragment.GreetingFragment"
+        android:name="com.example.lifecalendar.ui.fragment.old.GreetingFragment"
         android:label="GreetingFragment">
         <action
             android:id="@+id/action_greetingFragment_to_greetingSecondFragment"
             app:destination="@id/greetingSecondFragment" />
+        <action
+            android:id="@+id/action_greetingFragment_to_registrationNameFragment"
+            app:destination="@id/registrationNameFragment" />
     </fragment>
     <fragment
         android:id="@+id/greetingSecondFragment"
-        android:name="com.example.lifecalendar.ui.fragment.GreetingSecondFragment"
+        android:name="com.example.lifecalendar.ui.fragment.old.GreetingSecondFragment"
         android:label="GreetingSecondFragment">
         <action
             android:id="@+id/action_greetingSecondFragment_to_greetingFragment"
@@ -25,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationNameFragment"
-        android:name="com.example.lifecalendar.ui.fragment.RegistrationNameFragment"
+        android:name="com.example.lifecalendar.ui.fragment.old.RegistrationNameFragment"
         android:label="RegistrationNameFragment" >
         <action
             android:id="@+id/action_registrationNameFragment_to_registrationEmailFragment"
@@ -36,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationEmailFragment"
-        android:name="com.example.lifecalendar.ui.fragment.FragmentRegistrationEmail"
+        android:name="com.example.lifecalendar.ui.fragment.old.FragmentRegistrationEmail"
         android:label="RegistrationEmailFragment">
         <action
             android:id="@+id/action_fragmentRegistrationEmail_to_registrationMailCode"
@@ -47,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationMailCode"
-        android:name="com.example.lifecalendar.ui.fragment.RegistrationMailCode"
+        android:name="com.example.lifecalendar.ui.fragment.old.RegistrationMailCode"
         android:label="RegistrationMailCode" >
         <action
             android:id="@+id/action_registrationMailCode_to_registrationPasswordFragment"
@@ -58,7 +62,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationPasswordFragment"
-        android:name="com.example.lifecalendar.ui.fragment.RegistrationPasswordFragment"
+        android:name="com.example.lifecalendar.ui.fragment.old.RegistrationPasswordFragment"
         android:label="RegistrationPasswordFragment" >
         <action
             android:id="@+id/action_registrationPasswordFragment_to_registrationBirthdateFragment"
@@ -69,7 +73,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationBirthdateFragment"
-        android:name="com.example.lifecalendar.ui.fragment.RegistrationBirthdateFragment"
+        android:name="com.example.lifecalendar.ui.fragment.old.RegistrationBirthdateFragment"
         android:label="RegistrationBirthdateFragment" >
         <action
             android:id="@+id/action_registrationBirthdateFragment_to_registrationGenderFragment"
@@ -80,7 +84,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationGenderFragment"
-        android:name="com.example.lifecalendar.ui.fragment.RegistrationGenderFragment"
+        android:name="com.example.lifecalendar.ui.fragment.old.RegistrationGenderFragment"
         android:label="RegistrationGenderFragment" >
         <action
             android:id="@+id/action_registrationGenderFragment_to_registrationCareerFragment"
@@ -91,7 +95,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationCareerFragment"
-        android:name="com.example.lifecalendar.ui.fragment.RegistrationCareerFragment"
+        android:name="com.example.lifecalendar.ui.fragment.old.RegistrationCareerFragment"
         android:label="RegistrationCareerFragment" >
         <action
             android:id="@+id/action_registrationCareerFragment_to_registrationStatusFragment"
@@ -102,7 +106,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationStatusFragment"
-        android:name="com.example.lifecalendar.ui.fragment.RegistrationStatusFragment"
+        android:name="com.example.lifecalendar.ui.fragment.old.RegistrationStatusFragment"
         android:label="RegistrationStatusFragment" >
         <action
             android:id="@+id/action_registrationStatusFragment_to_registrationAvatarFragment"
@@ -113,10 +117,23 @@
     </fragment>
     <fragment
         android:id="@+id/registrationAvatarFragment"
-        android:name="com.example.lifecalendar.ui.fragment.RegistrationAvatarFragment"
+        android:name="com.example.lifecalendar.ui.fragment.old.RegistrationAvatarFragment"
         android:label="RegistrationAvatarFragment" >
         <action
             android:id="@+id/action_registrationAvatarFragment_to_registrationStatusFragment"
             app:destination="@id/registrationStatusFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.lifecalendar.ui.fragment.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_lifeCalendarFragment"
+            app:destination="@id/lifeCalendarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lifeCalendarFragment"
+        android:name="com.example.lifecalendar.ui.fragment.life_calendar.LifeCalendarFragment"
+        android:label="LifeCalendarFragment" />
 </navigation>
