@@ -17,7 +17,19 @@ class DataModule {
         return RemoteDataSource(api = api)
     }
     
-   
+    @Provides
+    fun provideSessionManager(context: Context): SessionManager {
+        return SessionManager(context)
+    }
     
-    
+    @Provides
+    fun provideAuthorizationRepository(
+        remoteDataSource: RemoteDataSource,
+        sessionManager: SessionManager
+    ): AuthorizationRepository {
+        return AuthorizationRepositoryImpl(
+            remoteDataSource = remoteDataSource,
+            sessionManager = sessionManager
+        )
+    }
 }
