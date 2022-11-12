@@ -17,7 +17,7 @@
     <string name="skip">Пропустить</string>
     <string name="mail_code">Введите код из письма</string>
     <string name="confirm">Подтвердить</string>
-    <string name="four_num">Введите 4 цифры.</string>
+    <string name="four_num">Код из письма</string>
     <string name="enter_password">Введите пароль</string>
     <string name="password">Пароль</string>
     <string name="password_repeat">Повторите пароль</string>
@@ -27,4 +27,7 @@
     <string name="year">ГГГГ</string>
     <string name="choose_photo_label">Выберите фото</string>
     <string name="back_label">Назад</string>
+    <string name="before_resending">До повторной отправки 30 сек.</string>
+    <string name="who_is_this_app_for">Для кого это приложение</string>
+    <string name="greeting_text1">Возможно, у вас есть некоторые цели, например, вы хотите написать книгу к 50 годам? Отлично! Поставьте себе цель на определённый год вашей жизни.</string>
 </resources>
