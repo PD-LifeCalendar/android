@@ -1,4 +1,4 @@
-package com.example.lifecalendar.ui.fragment
+package com.example.lifecalendar.ui.fragment.old
 
 import android.os.Bundle
 import android.view.LayoutInflater

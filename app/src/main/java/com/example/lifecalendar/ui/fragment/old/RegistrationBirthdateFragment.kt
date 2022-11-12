@@ -1,4 +1,4 @@
-package com.example.lifecalendar.ui.fragment
+package com.example.lifecalendar.ui.fragment.old
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.lifecalendar.R
 import com.example.lifecalendar.databinding.FragmentRegistrationBirthdateBinding
 
 

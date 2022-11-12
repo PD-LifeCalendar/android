@@ -1,4 +1,4 @@
-package com.example.lifecalendar.ui.fragment
+package com.example.lifecalendar.ui.fragment.old
 
 import android.app.Activity
 import android.app.AlertDialog
@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.example.lifecalendar.databinding.FragmentRegistrationAvatarBinding
@@ -45,6 +46,10 @@ class RegistrationAvatarFragment : Fragment() {
     
         binding.addImageFab.setOnClickListener {
             showPhotoChoosingAlertDialog()
+        }
+        
+        binding.icBack.setOnClickListener {
+            navigateToRegistrationStatusFragment()
         }
         
         return binding.root
@@ -166,5 +171,10 @@ class RegistrationAvatarFragment : Fragment() {
             .setNegativeButton("Cancel") { dialog, _ ->
                 dialog.dismiss()
             }.show()
+    }
+    
+    private fun navigateToRegistrationStatusFragment() {
+        val action = RegistrationAvatarFragmentDirections.actionRegistrationAvatarFragmentToRegistrationStatusFragment()
+        findNavController().navigate(action)
     }
 }
