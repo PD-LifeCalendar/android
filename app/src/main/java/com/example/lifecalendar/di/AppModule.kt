@@ -20,6 +20,9 @@ class AppModule(val context: Context) {
         return LoginViewModelFactory(loginUseCase = loginUseCase)
     }
     
-    
+    @Provides
+    fun provideLifeCalendarViewModelFactory(): LifeCalendarViewModelFactory {
+        return LifeCalendarViewModelFactory()
+    }
     
 }
