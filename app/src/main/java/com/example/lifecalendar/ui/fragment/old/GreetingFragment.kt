@@ -1,4 +1,4 @@
-package com.example.lifecalendar.ui.fragment
+package com.example.lifecalendar.ui.fragment.old
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,11 +23,20 @@ class GreetingFragment : Fragment() {
             navigateToGreetingSecondFragment()
         }
         
+        binding.skipBtn.setOnClickListener {
+            navigateToRegistration()
+        }
+        
         return binding.root
     }
     
     private fun navigateToGreetingSecondFragment() {
         val action = GreetingFragmentDirections.actionGreetingFragmentToGreetingSecondFragment()
+        findNavController().navigate(action)
+    }
+    
+    private fun navigateToRegistration() {
+        val action = GreetingFragmentDirections.actionGreetingFragmentToRegistrationNameFragment()
         findNavController().navigate(action)
     }
 }
