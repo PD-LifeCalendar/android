@@ -1,9 +1,7 @@
 package com.example.lifecalendar.ui.fragment.life_calendar
 
-/*
-TODO: Вадим
-    - develop view holder class here
-*/
-class LifeCalendarViewHolder {
+import androidx.recyclerview.widget.RecyclerView
+import com.example.lifecalendar.databinding.ItemYearBinding
 
-}
+class LifeCalendarViewHolder(val binding: ItemYearBinding) : RecyclerView.ViewHolder(binding.root)
+
