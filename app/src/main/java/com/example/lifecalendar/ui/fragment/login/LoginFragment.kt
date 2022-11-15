@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.lifecalendar.App
+import com.example.lifecalendar.data.source.local.SessionManager
 import com.example.lifecalendar.databinding.FragmentLoginBinding
 import com.example.lifecalendar.utils.ToastMaker
 import javax.inject.Inject
@@ -17,6 +18,7 @@ class LoginFragment : Fragment(), ToastMaker {
     
     private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: LoginViewModel
+    
     @Inject
     lateinit var viewModelFactory: LoginViewModelFactory
     
@@ -38,8 +40,12 @@ class LoginFragment : Fragment(), ToastMaker {
             viewModel.loginFailedFlow.collect { errorMessage ->
                 makeLongToast(requireContext(), "error code - $errorMessage")
             }
+        }
+        
+        lifecycleScope.launchWhenStarted {
             viewModel.loginSuccessFlow.collect { successMessage ->
                 makeLongToast(requireContext(), successMessage)
+//                navigateToLifeCalendarFragment()
             }
         }
         
@@ -50,7 +56,6 @@ class LoginFragment : Fragment(), ToastMaker {
         val email = binding.emailInput.text.toString().trim()
         val password = binding.passwordInput.text.toString().trim()
         viewModel.login(email = email, password = password)
-//        navigateToLifeCalendarFragment()
     }
     
     private fun checkToken() {

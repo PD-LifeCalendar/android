@@ -14,6 +14,7 @@ object AuthDtoMapper {
             email = userRegistrationResponse.email,
             name = userRegistrationResponse.name,
             birthdate = userRegistrationResponse.birthdate,
+            description = userRegistrationResponse.description ?: "",
             sex = userRegistrationResponse.sex,
             role = userRegistrationResponse.role,
         )
