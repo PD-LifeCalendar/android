@@ -23,4 +23,6 @@
     <color name="grey_30">#EDEDED</color>
     <color name="grey_20">#F5F5F5</color>
     <color name="grey_10">#FFFFFF</color>
+    <color name="beige">#FFCC80</color>
+    <color name="light_biege">#FFE0B2</color>
 </resources>
