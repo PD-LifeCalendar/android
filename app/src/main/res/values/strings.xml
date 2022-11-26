@@ -34,4 +34,7 @@
     <string name="first_goal">Переехать в место с лучшими условиями которые только могут быть в этом мире.</string>
     <string name="goals">Цели</string>
     <string name="achievements">Достижения</string>
+    <string name="enter">Войти</string>
+    <string name="or">или</string>
+    <string name="first_time_here">Первый раз здесь</string>
 </resources>
