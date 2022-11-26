@@ -21,6 +21,7 @@ class DataModule {
     fun provideSessionManager(context: Context): SessionManager {
         return SessionManager(context)
     }
+
     
     @Provides
     fun provideAuthorizationRepository(

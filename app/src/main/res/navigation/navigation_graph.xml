@@ -136,4 +136,8 @@
         android:id="@+id/lifeCalendarFragment"
         android:name="com.example.lifecalendar.ui.fragment.life_calendar.LifeCalendarFragment"
         android:label="LifeCalendarFragment" />
+    <fragment
+        android:id="@+id/selectedYearFragment"
+        android:name="com.example.lifecalendar.ui.fragment.selected_year.SelectedYearFragment"
+        android:label="SelectedYearFragment" />
 </navigation>
