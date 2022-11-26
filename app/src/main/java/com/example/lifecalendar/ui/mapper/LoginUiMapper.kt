@@ -5,9 +5,9 @@ import com.example.lifecalendar.ui.model.LoginUiModel
 
 object LoginUiMapper {
     
-    fun mapLoginUiModel(email: String, password: String): LoginUiModel =
-        LoginUiModel(email = email, password = password)
+    fun mapLoginUiModel(name: String, password: String): LoginUiModel =
+        LoginUiModel(name = name, password = password)
     
     fun mapLoginUiModelToDto(loginUiModel: LoginUiModel): LoginDto =
-        LoginDto(email = loginUiModel.email, password = loginUiModel.password)
+        LoginDto(name = loginUiModel.name, password = loginUiModel.password)
 }

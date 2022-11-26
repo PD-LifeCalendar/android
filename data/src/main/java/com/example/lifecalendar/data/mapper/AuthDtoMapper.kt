@@ -7,7 +7,7 @@ import com.example.lifecalendar.domain.model.UserDto
 
 object AuthDtoMapper {
     fun mapLoginDtoToRequest(loginDto: LoginDto): LoginRequest =
-        LoginRequest(email = loginDto.email, password = loginDto.password)
+        LoginRequest(email = loginDto.name, password = loginDto.password)
     
     fun mapLoginResponseToUserDto(userRegistrationResponse: UserRegistrationResponse): UserDto =
         UserDto(

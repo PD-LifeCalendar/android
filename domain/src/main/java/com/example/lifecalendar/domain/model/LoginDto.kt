@@ -1,6 +1,6 @@
 package com.example.lifecalendar.domain.model
 
 data class LoginDto(
-    val email: String,
+    val name: String,
     val password: String,
 )

@@ -17,9 +17,9 @@ class LoginViewModel(private val loginUseCase: LoginUseCase) : ViewModel() {
     private val loginFailedChannel = Channel<String>()
     val loginFailedFlow get() = loginFailedChannel.receiveAsFlow()
     
-    fun login(email: String, password: String) {
+    fun login(name: String, password: String) {
         viewModelScope.launch {
-            val loginUiModel = LoginUiMapper.mapLoginUiModel(email = email, password = password)
+            val loginUiModel = LoginUiMapper.mapLoginUiModel(name = name, password = password)
             val loginDtoModel = LoginUiMapper.mapLoginUiModelToDto(loginUiModel)
             when (val loginInfo = loginUseCase.login(loginDtoModel)) {
                 is ResultWrapper.Error -> {

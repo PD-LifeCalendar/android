@@ -1,6 +1,6 @@
 package com.example.lifecalendar.ui.model
 
 data class LoginUiModel(
-    val email: String,
+    val name: String,
     val password: String
 )

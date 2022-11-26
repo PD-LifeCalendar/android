@@ -33,8 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="142dp"
-        app:cardCornerRadius="50dp"
-        android:background="@color/white">
+        app:cardCornerRadius="50dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -73,6 +72,7 @@
                 app:layout_constraintTop_toBottomOf="@id/loginTextView">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/nameInput"
+                    android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white" />
@@ -94,7 +94,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
-
+                    android:textColor="@color/black"
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp"
                     android:inputType="textPassword"/>
