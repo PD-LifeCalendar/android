@@ -19,7 +19,7 @@
     <string name="confirm">Подтвердить</string>
     <string name="four_num">Код из письма</string>
     <string name="enter_password">Введите пароль</string>
-    <string name="password">Пароль</string>
+    <string name="password">********</string>
     <string name="password_repeat">Повторите пароль</string>
     <string name="birthdate">Выберите дату рождения</string>
     <string name="day">ДД</string>
@@ -30,4 +30,5 @@
     <string name="before_resending">До повторной отправки 30 сек.</string>
     <string name="who_is_this_app_for">Для кого это приложение</string>
     <string name="greeting_text1">Возможно, у вас есть некоторые цели, например, вы хотите написать книгу к 50 годам? Отлично! Поставьте себе цель на определённый год вашей жизни.</string>
+    <string name="registrate">Зарегистрироваться</string>
 </resources>
