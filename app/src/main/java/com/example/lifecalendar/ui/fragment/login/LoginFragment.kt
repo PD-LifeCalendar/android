@@ -56,9 +56,11 @@ class LoginFragment : Fragment(), ToastMaker {
     private fun login() {
         val name = binding.nameInput.text.toString().trim()
         val password = binding.passwordInput.text.toString().trim()
-        toaster(isValidPassword(password))
-        toaster(isValidName(name))
-        viewModel.login(name = name, password = password)
+        if(!isValidName(name)) {
+            makeLongToast(requireContext() , "is not valid name")
+        } else if (!isValidPassword(password)) {
+            makeLongToast(requireContext() , "is not valid password")
+        } else viewModel.login(name = name, password = password)
     }
 
     private fun isValidPassword(password: String?) : Boolean {
@@ -79,10 +81,12 @@ class LoginFragment : Fragment(), ToastMaker {
             return nameMatcher.find(name) != null
         } ?: return false }
 
-    private fun toaster(makeToast: Boolean) {
-        if (makeToast != true)
-            makeLongToast(requireContext(), "error")
-    }
+//    private fun toaster(makeToast: Boolean) {
+//        if (makeToast != true)
+//            makeLongToast(requireContext(), "error")
+//    }
+
+
 
     private fun checkToken() {
         // TODO()
