@@ -1,5 +1,6 @@
 package com.example.lifecalendar.data.util
 
+import android.util.Log
 import com.example.lifecalendar.domain.model.ErrorResponse
 import com.example.lifecalendar.domain.model.ResultWrapper
 import com.squareup.moshi.Moshi

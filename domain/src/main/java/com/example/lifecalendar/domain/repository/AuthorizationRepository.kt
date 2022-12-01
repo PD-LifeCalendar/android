@@ -6,5 +6,5 @@ import com.example.lifecalendar.domain.model.UserDto
 
 interface AuthorizationRepository {
     suspend fun login(loginDto: LoginDto): ResultWrapper<UserDto>?
-//    suspend fun refreshToken(): ResultWrapper<UserDto>?
+    suspend fun refreshToken(): ResultWrapper<UserDto>?
 }

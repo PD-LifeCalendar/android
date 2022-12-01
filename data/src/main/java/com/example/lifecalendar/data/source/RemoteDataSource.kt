@@ -11,4 +11,8 @@ class RemoteDataSource(private val api: LifeCalendarService) : SafeApiCall() {
     suspend fun login(loginRequest: LoginRequest): ResultWrapper<LoginResponse> {
         return safeApiCall { api.login(loginRequest) }
     }
+    
+    suspend fun refreshToken(): ResultWrapper<LoginResponse> {
+        return safeApiCall { api.refreshToken() }
+    }
 }

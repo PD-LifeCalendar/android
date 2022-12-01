@@ -2,6 +2,7 @@ package com.example.lifecalendar.di
 
 import android.content.Context
 import com.example.lifecalendar.domain.usecase.LoginUseCase
+import com.example.lifecalendar.domain.usecase.RefreshTokenUseCase
 import com.example.lifecalendar.ui.fragment.life_calendar.LifeCalendarViewModelFactory
 import com.example.lifecalendar.ui.fragment.login.LoginViewModelFactory
 import com.example.lifecalendar.ui.fragment.selected_year.SelectedYearViewModelFactory
@@ -17,8 +18,14 @@ class AppModule(val context: Context) {
     }
     
     @Provides
-    fun provideLoginViewModelFactory(loginUseCase: LoginUseCase): LoginViewModelFactory {
-        return LoginViewModelFactory(loginUseCase = loginUseCase)
+    fun provideLoginViewModelFactory(
+        loginUseCase: LoginUseCase,
+        refreshTokenUseCase: RefreshTokenUseCase
+    ): LoginViewModelFactory {
+        return LoginViewModelFactory(
+            loginUseCase = loginUseCase,
+            refreshTokenUseCase = refreshTokenUseCase
+        )
     }
     
     @Provides

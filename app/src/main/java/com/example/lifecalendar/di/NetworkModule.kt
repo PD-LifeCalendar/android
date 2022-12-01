@@ -1,28 +1,40 @@
 package com.example.lifecalendar.di
 
-import android.content.Context
 import com.example.lifecalendar.data.source.remote.LifeCalendarService
 import com.example.lifecalendar.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
-import okhttp3.Cache
+import okhttp3.Cookie
+import okhttp3.CookieJar
+import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+
 @Module
 class NetworkModule {
     
     @Provides
-    fun provideRetrofitInstance(context: Context): Retrofit {
+    fun provideRetrofitInstance(): Retrofit {
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
-        
-        val cache = Cache(directory = context.cacheDir, maxSize = 10L * 1024 * 1024) // 10 Mb
+    
         val client = OkHttpClient.Builder()
             .addInterceptor(interceptor)
-            .cache(cache)
+//            .cookieJar(MyCookieJar())
+            .cookieJar(object : CookieJar {
+                private val cookieStore: HashMap<HttpUrl, List<Cookie>> = HashMap()
+                override fun saveFromResponse(url: HttpUrl, cookies: List<Cookie>) {
+                    cookieStore[url] = cookies
+                }
+        
+                override fun loadForRequest(url: HttpUrl): List<Cookie> {
+                    val cookies = cookieStore[url]
+                    return cookies ?: ArrayList()
+                }
+            })
             .build()
         
         return Retrofit.Builder()
