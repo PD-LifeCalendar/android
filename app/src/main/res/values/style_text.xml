@@ -53,4 +53,10 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/grey_100</item>
     </style>
+
+    <style name="TextAppearance.LifeCalendar.TextInput.Big" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/nunito_medium</item>
+        <item name="android:textSize">60sp</item>
+        <item name="android:textColor">#FFB800</item>
+    </style>
 </resources>

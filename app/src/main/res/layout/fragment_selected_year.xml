@@ -5,10 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/currentYear"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/current_year" />
+    <ImageView
+        android:id="@+id/lineYear"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/currentYear"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/line_year" />
+    <ImageView
+        android:id="@+id/differentYear"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/lineYear"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/different_year" />
+
+    <TextView
+        android:id="@+id/year_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="19"
+        style="@style/TextAppearance.LifeCalendar.TextInput.Big"
+        app:layout_constraintRight_toRightOf="@id/differentYear"
+        app:layout_constraintLeft_toLeftOf="@id/differentYear"
+        app:layout_constraintTop_toTopOf="@id/differentYear"
+        app:layout_constraintBottom_toBottomOf="@id/differentYear"
+        />
+
     <TextView
         android:id="@+id/goals_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:text="@string/goals"
         app:layout_constraintStart_toStartOf="@id/goals"
         app:layout_constraintBottom_toTopOf="@id/goals" />
@@ -18,8 +58,7 @@
         android:layout_width="327dp"
         android:layout_height="wrap_content"
         android:background="@color/beige"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/achievements"
+        app:layout_constraintTop_toBottomOf="@id/currentYear"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:paddingTop="34dp"
@@ -30,6 +69,7 @@
     <TextView
         android:id="@+id/achievements_label"
         android:layout_width="wrap_content"
+        android:layout_marginBottom="5dp"
         android:layout_height="wrap_content"
         android:text="@string/achievements"
         app:layout_constraintStart_toStartOf="@id/achievements"
@@ -45,6 +85,7 @@
         app:layout_constraintTop_toBottomOf="@id/goals"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="25dp"
         android:paddingTop="34dp"
         android:paddingHorizontal="42dp"
         android:paddingBottom="35dp" />
