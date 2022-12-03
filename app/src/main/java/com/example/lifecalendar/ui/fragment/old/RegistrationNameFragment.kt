@@ -22,20 +22,11 @@ class RegistrationNameFragment : Fragment() {
             navigateToRegistrationEmailFragment()
         }
         
-        binding.icBack.setOnClickListener {
-            navigateToGreetingSecondFragment()
-        }
-        
         return binding.root
     }
     
     private fun navigateToRegistrationEmailFragment() {
         val action = RegistrationNameFragmentDirections.actionRegistrationNameFragmentToRegistrationEmailFragment()
-        findNavController().navigate(action)
-    }
-    
-    private fun navigateToGreetingSecondFragment() {
-        val action = RegistrationNameFragmentDirections.actionRegistrationNameFragmentToGreetingSecondFragment()
         findNavController().navigate(action)
     }
 }

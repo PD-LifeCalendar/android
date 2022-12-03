@@ -1,6 +1,5 @@
 package com.example.lifecalendar.ui.fragment.login
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.lifecalendar.App
-import com.example.lifecalendar.data.source.local.SessionManager
 import com.example.lifecalendar.databinding.FragmentLoginBinding
 import com.example.lifecalendar.utils.ToastMaker
 import javax.inject.Inject
@@ -79,14 +77,8 @@ class LoginFragment : Fragment(), ToastMaker {
             if (name.length < 2) return false
             if (name.length > 64) return false
             return nameMatcher.find(name) != null
-        } ?: return false }
-
-//    private fun toaster(makeToast: Boolean) {
-//        if (makeToast != true)
-//            makeLongToast(requireContext(), "error")
-//    }
-
-
+        } ?: return false
+    }
 
     private fun checkToken() {
         // TODO()

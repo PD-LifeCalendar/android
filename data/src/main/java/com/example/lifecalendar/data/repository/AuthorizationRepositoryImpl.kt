@@ -2,7 +2,7 @@ package com.example.lifecalendar.data.repository
 
 import com.example.lifecalendar.data.mapper.AuthDtoMapper
 import com.example.lifecalendar.data.source.RemoteDataSource
-import com.example.lifecalendar.data.source.local.SessionManager
+import com.example.lifecalendar.data.source.local.prefs.SessionManager
 import com.example.lifecalendar.data.source.remote.model.LoginResponse
 import com.example.lifecalendar.domain.model.LoginDto
 import com.example.lifecalendar.domain.model.ResultWrapper

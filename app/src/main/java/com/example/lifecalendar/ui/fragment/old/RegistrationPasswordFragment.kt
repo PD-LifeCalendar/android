@@ -19,20 +19,11 @@ class RegistrationPasswordFragment : Fragment() {
     ): View {
         binding = FragmentRegistrationPasswordBinding.inflate(inflater, container, false)
     
-        binding.nextBtn.setOnClickListener {
-            navigateToRegistrationBirthdateFragment()
-        }
-    
         binding.icBack.setOnClickListener {
             navigateToRegistrationMailCode()
         }
     
         return binding.root
-    }
-    
-    private fun navigateToRegistrationBirthdateFragment() {
-        val action = RegistrationPasswordFragmentDirections.actionRegistrationPasswordFragmentToRegistrationBirthdateFragment()
-        findNavController().navigate(action)
     }
     
     private fun navigateToRegistrationMailCode() {
