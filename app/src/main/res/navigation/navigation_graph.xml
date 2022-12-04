@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/greetingFragment">
+    app:startDestination="@+id/loginFragment">
 
     <fragment
         android:id="@+id/greetingFragment"
@@ -138,4 +138,8 @@
         android:id="@+id/selectedYearFragment"
         android:name="com.example.lifecalendar.ui.fragment.selected_year.SelectedYearFragment"
         android:label="SelectedYearFragment" />
+    <fragment
+        android:id="@+id/navDrawer"
+        android:name="com.example.lifecalendar.ui.fragment.old.FragmentNavDrawer"
+        android:label="NavDrawerFragment" />
 </navigation>
