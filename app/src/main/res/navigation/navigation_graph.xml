@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@+id/loginFragment">
+    app:startDestination="@id/greetingFragment">
 
     <fragment
         android:id="@+id/greetingFragment"
@@ -14,7 +14,9 @@
             app:destination="@id/greetingSecondFragment" />
         <action
             android:id="@+id/action_greetingFragment_to_registrationBirthdateFragment"
-            app:destination="@id/registrationBirthdateFragment" />
+            app:destination="@id/registrationBirthdateFragment"
+            app:popUpTo="@id/navigation_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_greetingFragment_to_lifeCalendarFragment"
             app:destination="@id/lifeCalendarFragment" />
@@ -74,7 +76,9 @@
         android:label="RegistrationBirthdateFragment" >
         <action
             android:id="@+id/action_registrationBirthdateFragment_to_lifeCalendarFragment"
-            app:destination="@id/lifeCalendarFragment" />
+            app:destination="@id/lifeCalendarFragment"
+            app:popUpTo="@id/navigation_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_registrationBirthdateFragment_to_greetingSecondFragment"
             app:destination="@id/greetingSecondFragment" />
@@ -137,9 +141,25 @@
     <fragment
         android:id="@+id/selectedYearFragment"
         android:name="com.example.lifecalendar.ui.fragment.selected_year.SelectedYearFragment"
-        android:label="SelectedYearFragment" />
+        android:label="SelectedYearFragment" >
+        <argument
+            android:name="personAge"
+            app:argType="integer" />
+        <argument
+            android:name="selectedYear"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_selectedYearFragment_to_addNodeFragment"
+            app:destination="@id/addNodeFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/navDrawer"
-        android:name="com.example.lifecalendar.ui.fragment.old.FragmentNavDrawer"
-        android:label="NavDrawerFragment" />
+        android:id="@+id/addNodeFragment"
+        android:name="com.example.lifecalendar.ui.fragment.add_node.AddNodeFragment"
+        android:label="AddNodeFragment" >
+        <argument
+            android:name="personAge"
+            app:argType="integer" />
+        <argument android:name="selectedYear"
+            app:argType="integer" />
+    </fragment>
 </navigation>

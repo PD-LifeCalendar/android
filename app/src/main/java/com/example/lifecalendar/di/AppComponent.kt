@@ -2,6 +2,7 @@ package com.example.lifecalendar.di
 
 import com.example.lifecalendar.App
 import com.example.lifecalendar.MainActivity
+import com.example.lifecalendar.ui.fragment.add_node.AddNodeFragment
 import com.example.lifecalendar.ui.fragment.birthdate.RegistrationBirthdateFragment
 import com.example.lifecalendar.ui.fragment.greeting.GreetingFragment
 import com.example.lifecalendar.ui.fragment.life_calendar.LifeCalendarFragment
@@ -18,4 +19,5 @@ interface AppComponent {
     fun inject(selectedYearFragment: SelectedYearFragment)
     fun inject(greetingFragment: GreetingFragment)
     fun inject(registrationBirthdateFragment: RegistrationBirthdateFragment)
+    fun inject(addNodeFragment: AddNodeFragment)
 }

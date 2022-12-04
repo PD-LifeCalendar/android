@@ -5,9 +5,9 @@ import androidx.room.PrimaryKey
 import java.time.LocalDateTime
 
 @Entity
-data class BirthdateEntity(
+data class NodeEntity(
     @PrimaryKey(autoGenerate = true) val id: Int,
-    val birthdate: LocalDateTime,
-    val createdAt: LocalDateTime,
-    val updatedAt: LocalDateTime,
+    val year: Int,
+    val title: String,
+    val description: String,
 )

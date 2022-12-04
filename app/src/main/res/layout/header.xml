@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="@id/ava"
         app:layout_constraintBottom_toBottomOf="@id/ava"
         app:layout_constraintLeft_toRightOf="@id/ava"
-        style="@style/TextAppearance.LifeCalendar.Ava" />
+        style="@style/TextAppearance.LifeCalendar.BodyText.14.Regular" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

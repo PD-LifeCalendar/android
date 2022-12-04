@@ -24,6 +24,8 @@
     <color name="grey_20">#F5F5F5</color>
     <color name="grey_10">#FFFFFF</color>
     <color name="beige">#FFCC80</color>
+    <color name="card">#FFD363</color>
+    <color name="card_text">#721212</color>
     <color name="light_biege">#FFE0B2</color>
     <color name="unlived_year">#F4F4F4</color>
 </resources>

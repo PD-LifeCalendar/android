@@ -1,8 +1,8 @@
 package com.example.lifecalendar.di
 
 import android.content.Context
-import com.example.lifecalendar.domain.usecase.LoginUseCase
-import com.example.lifecalendar.domain.usecase.RefreshTokenUseCase
+import com.example.lifecalendar.domain.usecase.*
+import com.example.lifecalendar.ui.fragment.add_node.AddNodeViewModelFactory
 import com.example.lifecalendar.ui.fragment.life_calendar.LifeCalendarViewModelFactory
 import com.example.lifecalendar.ui.fragment.login.LoginViewModelFactory
 import com.example.lifecalendar.ui.fragment.selected_year.SelectedYearViewModelFactory
@@ -32,9 +32,21 @@ class AppModule(val context: Context) {
     fun provideLifeCalendarViewModelFactory(): LifeCalendarViewModelFactory {
         return LifeCalendarViewModelFactory()
     }
+    
     @Provides
-    fun provideSelectedYearModuleFactory(): SelectedYearViewModelFactory {
-        return SelectedYearViewModelFactory()
+    fun provideSelectedYearViewModelFactory(
+        fetchYearNodesUseCase: FetchYearNodesUseCase,
+        deleteNodeByIdUseCase: DeleteNodeByIdUseCase
+    ): SelectedYearViewModelFactory {
+        return SelectedYearViewModelFactory(
+            fetchYearNodesUseCase = fetchYearNodesUseCase,
+            deleteNodeByIdUseCase = deleteNodeByIdUseCase
+        )
+    }
+    
+    @Provides
+    fun provideAddNodeViewModelFactory(addYearNodeUseCase: AddYearNodeUseCase): AddNodeViewModelFactory {
+        return AddNodeViewModelFactory(addYearNodeUseCase = addYearNodeUseCase)
     }
     
 }

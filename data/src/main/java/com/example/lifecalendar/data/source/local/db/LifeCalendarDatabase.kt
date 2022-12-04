@@ -5,18 +5,18 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.example.lifecalendar.data.source.local.db.dao.BirthdateDao
-import com.example.lifecalendar.data.source.local.db.model.BirthdateEntity
+import com.example.lifecalendar.data.source.local.db.dao.NodeDao
+import com.example.lifecalendar.data.source.local.db.model.NodeEntity
 
 @Database(
-    entities = [BirthdateEntity::class],
-    version = 1,
+    entities = [NodeEntity::class],
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(DateConverter::class)
 abstract class LifeCalendarDatabase : RoomDatabase() {
     
-    abstract val birthdateDao: BirthdateDao
+    abstract val nodeDao: NodeDao
     
     companion object {
         @Volatile

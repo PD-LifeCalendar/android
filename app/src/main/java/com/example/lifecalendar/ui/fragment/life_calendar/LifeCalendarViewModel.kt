@@ -24,14 +24,8 @@ class LifeCalendarViewModel : ViewModel() {
     private fun getUiModelList(yearsOld: Int): List<LifeCalendarUiModel> {
         val lifeCalendarUiModelList = mutableListOf<LifeCalendarUiModel>()
         for (year in 1..100) {
-            if (year <= yearsOld) {
-                val lifeCalendarUiModel = LifeCalendarUiModel(year = year.toString(), true)
-                lifeCalendarUiModelList.add(lifeCalendarUiModel)
-            } else {
-                val lifeCalendarUiModel = LifeCalendarUiModel(year = year.toString(), false)
-                lifeCalendarUiModelList.add(lifeCalendarUiModel)
-            }
-            
+            val lifeCalendarUiModel = LifeCalendarUiModel(year = year.toString(), yearsOld.toString())
+            lifeCalendarUiModelList.add(lifeCalendarUiModel)
         }
         return lifeCalendarUiModelList
     }

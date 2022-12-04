@@ -6,7 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.profile.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <androidx.cardview.widget.CardView
         android:id="@+id/profileHeader"
         android:layout_width="match_parent"
@@ -122,8 +121,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         />
 
-
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/profileMailTextField"
         style="@style/Widget.LifeCalendar.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -185,13 +182,5 @@
             android:layout_height="wrap_content"
             />
     </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

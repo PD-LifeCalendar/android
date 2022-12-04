@@ -47,9 +47,11 @@
     <string name="age">19 Лет</string>
     <string name="profile_name">Профиль</string>
     <string name="goal_action">Новая Цель</string>
-    <string name="goal_name">Название цели</string>
+    <string name="goal_name">Цель/достижение</string>
     <string name="come_up_with_name">Придумайте название</string>
-    <string name="description">Описание</string>
+    <string name="description">Описание... (необязательно)</string>
     <string name="write_about_task">Опишите детали вашей задачи</string>
     <string name="save">Сохранить</string>
+    <string name="long_desc">Описание описание Описание описание Описание описание Описание описание Описание описание</string>
+    <string name="goal">Цель</string>
 </resources>

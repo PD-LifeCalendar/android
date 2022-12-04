@@ -42,6 +42,10 @@ class LifeCalendarFragment : Fragment(), ToastMaker, FragmentMVVM {
         viewModel.lifeCalendarUiModelLiveData.observe(viewLifecycleOwner) { adapter.setData(it) }
         return binding.root
     }
+    
+    override fun onResume() {
+        super.onResume()
+    }
 
     override fun initViewModel() {
         viewModel =

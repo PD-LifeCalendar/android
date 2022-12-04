@@ -17,4 +17,8 @@ class FirstRunAppManager(context: Context) {
     }
     
     fun isFirstRunApp(): Boolean = prefs.getBoolean(IS_FIRST_RUN, true)
+    
+    fun deleteFirstRunApp() {
+        prefs.edit().putString(IS_FIRST_RUN, null).apply()
+    }
 }

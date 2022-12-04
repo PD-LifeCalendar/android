@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/currentYear"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/current_year" />
-    <ImageView
+
+    <!--<ImageView
         android:id="@+id/lineYear"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -21,52 +21,71 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/currentYear"
         android:layout_marginTop="15dp"
-        android:src="@drawable/line_year" />
+        android:src="@drawable/line_year" />-->
+
     <ImageView
         android:id="@+id/differentYear"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/lineYear"
+        app:layout_constraintTop_toTopOf="@id/currentYear"
         android:layout_marginTop="24dp"
         android:src="@drawable/different_year" />
 
     <TextView
         android:id="@+id/year_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
         android:text="19"
         style="@style/TextAppearance.LifeCalendar.TextInput.Big"
         app:layout_constraintRight_toRightOf="@id/differentYear"
         app:layout_constraintLeft_toLeftOf="@id/differentYear"
         app:layout_constraintTop_toTopOf="@id/differentYear"
-        app:layout_constraintBottom_toBottomOf="@id/differentYear"
-        />
+        app:layout_constraintBottom_toBottomOf="@id/differentYear" />
 
-    <TextView
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_new_node"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:fabSize="normal"
+        android:src="@drawable/ic_baseline_add_24"
+        android:backgroundTint="@color/card"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!--<ImageView
+        android:id="@+id/edit_pen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/edit_pen" />-->
+
+    <!--<TextView
         android:id="@+id/goals_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:text="@string/goals"
         app:layout_constraintStart_toStartOf="@id/goals"
-        app:layout_constraintBottom_toTopOf="@id/goals" />
+        app:layout_constraintBottom_toTopOf="@id/goals" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/goals"
-        android:layout_width="327dp"
-        android:layout_height="wrap_content"
-        android:background="@color/beige"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
         app:layout_constraintTop_toBottomOf="@id/currentYear"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:paddingTop="34dp"
-        android:paddingHorizontal="42dp"
-        android:paddingBottom="35dp"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/achievements_label"
         android:layout_width="wrap_content"
         android:layout_marginBottom="5dp"
@@ -75,8 +94,8 @@
         app:layout_constraintStart_toStartOf="@id/achievements"
         app:layout_constraintBottom_toTopOf="@id/achievements"
         />
-
-    <androidx.recyclerview.widget.RecyclerView
+-->
+    <!--<androidx.recyclerview.widget.RecyclerView
         android:id="@+id/achievements"
         android:layout_width="327dp"
         android:layout_height="wrap_content"
@@ -88,7 +107,7 @@
         android:layout_marginTop="25dp"
         android:paddingTop="34dp"
         android:paddingHorizontal="42dp"
-        android:paddingBottom="35dp" />
+        android:paddingBottom="35dp" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

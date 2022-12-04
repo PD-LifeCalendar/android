@@ -1,43 +1,63 @@
 package com.example.lifecalendar.ui.fragment.selected_year
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lifecalendar.App
+import com.example.lifecalendar.databinding.FragmentSelectedYearBinding
 import com.example.lifecalendar.utils.FragmentMVVM
 import com.example.lifecalendar.utils.ToastMaker
-import com.example.lifecalendar.databinding.FragmentSelectedYearBinding
-import com.example.lifecalendar.ui.model.Achievements
-import com.example.lifecalendar.ui.model.Goals
-
-
 import javax.inject.Inject
 
-class SelectedYearFragment : Fragment(), ToastMaker, FragmentMVVM {
-
+class SelectedYearFragment : Fragment(), ToastMaker, FragmentMVVM, SelectedYearPassClick {
+    
     private lateinit var binding: FragmentSelectedYearBinding
     private lateinit var viewModel: SelectedYearViewModel
-    private lateinit var goalsAdapter: GoalsAdapter
-    private lateinit var achievementsAdapter: AchievementsAdapter
-
+    private lateinit var selectedYearAdapter: SelectedYearAdapter
+    private val args by navArgs<SelectedYearFragmentArgs>()
+    
     @Inject
     lateinit var viewModelFactory: SelectedYearViewModelFactory
-
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        (requireContext().applicationContext as App).appComponent.inject(this)
+        initViewModel()
+        viewModel.fetchNodes(args.selectedYear)
+    }
+    
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentSelectedYearBinding.inflate(inflater, container, false)
-        (requireContext().applicationContext as App).appComponent.inject(this)
-        initViewModel()
         setupRecycler()
-        goalsAdapter.setData(Goals.getArray().toMutableList())
-        achievementsAdapter.setData(Achievements.getArray().toMutableList())
+        viewModel.selectedYearUiModelLiveData.observe(viewLifecycleOwner) {
+            binding.yearText.text = it.selectedYear
+            selectedYearAdapter.setData(it.nodes)
+        }
+        binding.addNewNode.setOnClickListener {
+            val action = SelectedYearFragmentDirections.actionSelectedYearFragmentToAddNodeFragment(
+                personAge = args.personAge,
+                selectedYear = args.selectedYear
+            )
+            findNavController().navigate(action)
+        }
+        
         return binding.root
+    }
+    
+    // TODO: Убрать кастыль
+    override fun onStart() {
+        super.onStart()
+        viewModel.fetchNodes(args.selectedYear)
     }
 
     override fun initViewModel() {
@@ -46,13 +66,13 @@ class SelectedYearFragment : Fragment(), ToastMaker, FragmentMVVM {
     }
 
     private fun setupRecycler() {
-        goalsAdapter = GoalsAdapter()
-        achievementsAdapter = AchievementsAdapter()
-        val firstLayoutManager = GridLayoutManager(context, 1)
-        val secondLayoutManager = GridLayoutManager(context, 1)
-        binding.goals.layoutManager = firstLayoutManager
-        binding.achievements.layoutManager = secondLayoutManager
-        binding.goals.adapter = goalsAdapter
-        binding.achievements.adapter = achievementsAdapter
+        selectedYearAdapter = SelectedYearAdapter(this)
+        val layoutManager = LinearLayoutManager(context)
+        binding.goals.layoutManager = layoutManager
+        binding.goals.adapter = selectedYearAdapter
+    }
+    
+    override fun deleteNodeById(nodeId: Int) {
+        viewModel.deleteNodeById(nodeId)
     }
 }
