@@ -94,7 +94,6 @@
         android:id="@+id/illustration_gender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/illustration_avatar"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
