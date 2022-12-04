@@ -28,5 +28,4 @@ class GoalActionFragment : Fragment() {
     }
 
 
-
 }

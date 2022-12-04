@@ -119,7 +119,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_clock"
-
                 app:layout_constraintTop_toBottomOf="@id/descriptionLayout"
                 app:layout_constraintLeft_toRightOf="@id/calendar"
                 app:layout_constraintRight_toRightOf="parent"

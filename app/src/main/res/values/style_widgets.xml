@@ -53,4 +53,24 @@
     <style name="CircularImage">
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="DialogTheme" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="colorAccent">@color/dark_orange_yellow</item> <!--header background-->
+        <item name="android:colorControlActivated">@color/orange</item> <!--selected day-->
+        <item name="android:buttonBarPositiveButtonStyle">@style/AppTheme.Alert.Button.Positive</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/AppTheme.Alert.Button.Negative</item>
+        <item name="android:buttonBarNeutralButtonStyle">@style/AppTheme.Alert.Button.Neutral</item>
+    </style>
+
+    <style name="AppTheme.Alert.Button.Positive" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/orange</item>
+    </style>
+
+    <style name="AppTheme.Alert.Button.Negative" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/orange</item>
+    </style>
+
+    <style name="AppTheme.Alert.Button.Neutral" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/orange</item>
+    </style>
 </resources>
