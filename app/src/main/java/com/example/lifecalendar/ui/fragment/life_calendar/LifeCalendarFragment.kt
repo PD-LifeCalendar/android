@@ -1,6 +1,5 @@
 package com.example.lifecalendar.ui.fragment.life_calendar
 
-import android.os.BugreportManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,17 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lifecalendar.App
-import com.example.lifecalendar.databinding.ActivityMainBinding
 import com.example.lifecalendar.databinding.FragmentLifeCalendarBinding
 import com.example.lifecalendar.utils.FragmentMVVM
 import com.example.lifecalendar.utils.ToastMaker
-import com.example.lifecalendar.databinding.ItemYearBinding
-import androidx.recyclerview.widget.RecyclerView
-import com.example.lifecalendar.ui.model.ArrayYear
-
-
+import com.example.lifecalendar.data.source.local.prefs.BirthdateManager
 import javax.inject.Inject
 
 class LifeCalendarFragment : Fragment(), ToastMaker, FragmentMVVM {
@@ -29,16 +22,24 @@ class LifeCalendarFragment : Fragment(), ToastMaker, FragmentMVVM {
 
     @Inject
     lateinit var viewModelFactory: LifeCalendarViewModelFactory
-
+    
+    @Inject
+    lateinit var birthdateManager: BirthdateManager
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        (requireContext().applicationContext as App).appComponent.inject(this)
+        initViewModel()
+        viewModel.calculateYearsOld(birthdateManager.getBirthdate())
+    }
+    
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentLifeCalendarBinding.inflate(inflater, container, false)
-        (requireContext().applicationContext as App).appComponent.inject(this)
-        initViewModel()
         setupRecycler()
-        adapter.setData(ArrayYear.getArray().toMutableList())
+        viewModel.lifeCalendarUiModelLiveData.observe(viewLifecycleOwner) { adapter.setData(it) }
         return binding.root
     }
 

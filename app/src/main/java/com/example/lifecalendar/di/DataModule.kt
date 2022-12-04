@@ -3,7 +3,9 @@ package com.example.lifecalendar.di
 import android.content.Context
 import com.example.lifecalendar.data.repository.AuthorizationRepositoryImpl
 import com.example.lifecalendar.data.source.RemoteDataSource
-import com.example.lifecalendar.data.source.local.SessionManager
+import com.example.lifecalendar.data.source.local.prefs.BirthdateManager
+import com.example.lifecalendar.data.source.local.prefs.FirstRunAppManager
+import com.example.lifecalendar.data.source.local.prefs.SessionManager
 import com.example.lifecalendar.data.source.remote.LifeCalendarService
 import com.example.lifecalendar.domain.repository.AuthorizationRepository
 import dagger.Module
@@ -21,7 +23,16 @@ class DataModule {
     fun provideSessionManager(context: Context): SessionManager {
         return SessionManager(context)
     }
-
+    
+    @Provides
+    fun provideBirthdateManager(context: Context): BirthdateManager {
+        return BirthdateManager(context)
+    }
+    
+    @Provides
+    fun provideFirstRunAppManager(context: Context): FirstRunAppManager {
+        return FirstRunAppManager(context)
+    }
     
     @Provides
     fun provideAuthorizationRepository(

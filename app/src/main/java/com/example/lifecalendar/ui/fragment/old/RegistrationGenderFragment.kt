@@ -21,10 +21,6 @@ class RegistrationGenderFragment : Fragment() {
         binding.nextBtn.setOnClickListener {
             navigateToRegistrationCareerFragment()
         }
-    
-        binding.icBack.setOnClickListener {
-            navigateToRegistrationBirthdateFragment()
-        }
         
         return binding.root
     }
@@ -34,8 +30,5 @@ class RegistrationGenderFragment : Fragment() {
         findNavController().navigate(action)
     }
     
-    private fun navigateToRegistrationBirthdateFragment() {
-        val action = RegistrationGenderFragmentDirections.actionRegistrationGenderFragmentToRegistrationBirthdateFragment()
-        findNavController().navigate(action)
-    }
+    
 }

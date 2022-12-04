@@ -1,4 +1,4 @@
-package com.example.lifecalendar.data.source.local
+package com.example.lifecalendar.data.source.local.prefs
 
 import android.content.Context
 import android.content.SharedPreferences

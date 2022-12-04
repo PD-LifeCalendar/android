@@ -5,12 +5,12 @@
     android:layout_height="wrap_content">
 
     <Button
-        android:id="@+id/yearText"
+        android:id="@+id/yearButton"
         style="@style/Widget.LifeCalendar.Button2"
         android:layout_width="34dp"
         android:layout_height="34dp"
         android:layout_marginBottom="10dp"
-        android:text=""
+        android:text="@string/_12"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
