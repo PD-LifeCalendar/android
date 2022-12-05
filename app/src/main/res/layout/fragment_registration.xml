@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.login.LoginFragment">
+
+    <ImageView
+        android:id="@+id/cal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/illustration_thumbnail"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="17dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="65dp"
+        app:cardCornerRadius="50dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="17dp"
+            >
+
+            <TextView
+                style="@style/TextAppearance.LifeCalendar.Title.Large"
+                android:id="@+id/loginTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/registrationStr"
+                android:layout_marginTop="25dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameLayout"
+                style="@style/TextAppearance.LifeCalendar.TextInput.Light"
+                android:hint="@string/alyona"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/loginTextView">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameInput"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/nameLayoutname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                app:layout_constraintBottom_toTopOf="@id/nameLayout"
+                app:layout_constraintLeft_toLeftOf="@id/nameLayout"
+                android:layout_marginLeft="10dp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mailLayout"
+                style="@style/TextAppearance.LifeCalendar.TextInput.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:hint="@string/userMail"
+                app:layout_constraintTop_toBottomOf="@id/nameLayout"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mailInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/mailLayoutname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mailLayoutName"
+                app:layout_constraintBottom_toTopOf="@id/mailLayout"
+                app:layout_constraintLeft_toLeftOf="@id/mailLayout"
+                android:layout_marginLeft="10dp"
+                />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/birthdayLayout"
+                style="@style/TextAppearance.LifeCalendar.TextInput.Light"
+                android:hint="@string/userBirthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mailLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/birthdayInput"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/birthdayLayoutName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/birthdateLayoutName"
+                app:layout_constraintBottom_toTopOf="@id/birthdayLayout"
+                app:layout_constraintLeft_toLeftOf="@id/birthdayLayout"
+                android:layout_marginLeft="10dp"
+                />
+
+            <CheckBox
+                style="@style/TextAppearance.LifeCalendar.BodyText.16.Medium"
+                android:button="@drawable/custom_checkbox"
+                android:id="@+id/checkBoxFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="10dp"
+                android:text="@string/female_gender"
+                app:layout_constraintTop_toBottomOf="@id/birthdayLayout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+            <CheckBox
+                style="@style/TextAppearance.LifeCalendar.BodyText.16.Medium"
+                android:button="@drawable/custom_checkbox"
+                android:id="@+id/checkBoxMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/male_gender"
+                app:layout_constraintTop_toBottomOf="@id/checkBoxFemale"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordRegLayout"
+                style="@style/TextAppearance.LifeCalendar.TextInput.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:hint="@string/password"
+                app:layout_constraintTop_toBottomOf="@id/checkBoxMale"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/regPasswordInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:inputType="textPassword"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/passwordLayoutName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password_head"
+                app:layout_constraintBottom_toTopOf="@id/passwordRegLayout"
+                app:layout_constraintLeft_toLeftOf="@id/passwordRegLayout"
+                android:layout_marginLeft="10dp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/regButton"
+                style="@style/Widget.LifeCalendar.Button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:text="@string/registrate"
+                android:textSize="20sp"
+                android:paddingVertical="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/passwordRegLayout"
+                app:strokeColor="@color/yellow_pink"
+                app:strokeWidth="3dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

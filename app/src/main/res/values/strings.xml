@@ -54,4 +54,10 @@
     <string name="save">Сохранить</string>
     <string name="long_desc">Описание описание Описание описание Описание описание Описание описание Описание описание</string>
     <string name="goal">Цель</string>
+    <string name="registrationStr">Регистрация</string>
+    <string name="alyona">Alyona</string>
+    <string name="userMail">alena@yandex.ru</string>
+    <string name="userBirthday">02.09.2002</string>
+    <string name="mailLayoutName">Почта</string>
+    <string name="birthdateLayoutName">Дата рождения</string>
 </resources>
