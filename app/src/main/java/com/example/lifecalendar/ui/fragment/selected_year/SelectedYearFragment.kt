@@ -12,6 +12,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lifecalendar.App
 import com.example.lifecalendar.databinding.FragmentSelectedYearBinding
+import com.example.lifecalendar.ui.model.YearNode
 import com.example.lifecalendar.utils.FragmentMVVM
 import com.example.lifecalendar.utils.ToastMaker
 import javax.inject.Inject
@@ -64,7 +65,7 @@ class SelectedYearFragment : Fragment(), ToastMaker, FragmentMVVM, SelectedYearP
         viewModel =
             ViewModelProvider(this, viewModelFactory)[SelectedYearViewModel::class.java]
     }
-
+    
     private fun setupRecycler() {
         selectedYearAdapter = SelectedYearAdapter(this)
         val layoutManager = LinearLayoutManager(context)
@@ -74,5 +75,21 @@ class SelectedYearFragment : Fragment(), ToastMaker, FragmentMVVM, SelectedYearP
     
     override fun deleteNodeById(nodeId: Int) {
         viewModel.deleteNodeById(nodeId)
+    }
+    
+    override fun updateNode(yearNode: YearNode) {
+        val selectedYear = viewModel.selectedYearUiModelLiveData.value?.selectedYear?.toInt()
+        if (selectedYear != null) {
+            val action = SelectedYearFragmentDirections.actionSelectedYearFragmentToEditNodeFragment(
+                id = yearNode.nodeId,
+                year = selectedYear,
+                title = yearNode.title,
+                description = yearNode.description
+            )
+            findNavController().navigate(action)
+        } else {
+            makeShortToast(requireContext(), "неизвестная ошибка")
+        }
+        
     }
 }

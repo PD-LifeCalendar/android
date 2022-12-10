@@ -4,16 +4,16 @@
       tools:showIn="navigation_view"
     >
     <item
-        android:id="@+id/optCalendar"
+        android:id="@+id/lifeCalendarFragment"
         android:title="Календарь жизни"
         android:icon="@drawable/ic_calendar_of_life"/>
-    <item
+    <!--<item
         android:id="@+id/optYear"
         android:title="Текущий год"
-        android:icon="@drawable/ic_current_year"/>
+        android:icon="@drawable/ic_current_year"/>-->
     <item
         android:id="@+id/optGoal"
-        android:title="Новая цель"
+        android:title="Цели"
         android:icon="@drawable/ic_star"/>
     <item
         android:id="@+id/optAchievement"

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/greetingFragment">
 
     <fragment
         android:id="@+id/greetingFragment"
@@ -151,6 +151,9 @@
         <action
             android:id="@+id/action_selectedYearFragment_to_addNodeFragment"
             app:destination="@id/addNodeFragment" />
+        <action
+            android:id="@+id/action_selectedYearFragment_to_editNodeFragment"
+            app:destination="@id/editNodeFragment" />
     </fragment>
     <fragment
         android:id="@+id/addNodeFragment"
@@ -163,8 +166,20 @@
             app:argType="integer" />
     </fragment>
     <fragment
-        android:id="@+id/registrationAllFragment"
-        android:name="com.example.lifecalendar.ui.fragment.profile.RegistrationFragment"
-        android:label="RegistrationAllFragment" >
+        android:id="@+id/editNodeFragment"
+        android:name="com.example.lifecalendar.ui.fragment.edit_node.EditNodeFragment"
+        android:label="EditNodeFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="year"
+            app:argType="integer" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
     </fragment>
 </navigation>

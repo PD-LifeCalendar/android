@@ -3,6 +3,7 @@ package com.example.lifecalendar.di
 import android.content.Context
 import com.example.lifecalendar.domain.usecase.*
 import com.example.lifecalendar.ui.fragment.add_node.AddNodeViewModelFactory
+import com.example.lifecalendar.ui.fragment.edit_node.EditNodeViewModelFactory
 import com.example.lifecalendar.ui.fragment.life_calendar.LifeCalendarViewModelFactory
 import com.example.lifecalendar.ui.fragment.login.LoginViewModelFactory
 import com.example.lifecalendar.ui.fragment.selected_year.SelectedYearViewModelFactory
@@ -47,6 +48,11 @@ class AppModule(val context: Context) {
     @Provides
     fun provideAddNodeViewModelFactory(addYearNodeUseCase: AddYearNodeUseCase): AddNodeViewModelFactory {
         return AddNodeViewModelFactory(addYearNodeUseCase = addYearNodeUseCase)
+    }
+    
+    @Provides
+    fun provideEditNodeViewModelFactory(updateNodeUseCase: UpdateNodeUseCase): EditNodeViewModelFactory {
+        return EditNodeViewModelFactory(updateNodeUseCase = updateNodeUseCase)
     }
     
 }

@@ -20,4 +20,9 @@ class NodeRepositoryImpl(private val localDataSource: LocalDataSource) : NodeRep
         val nodeEntity = localDataSource.fetchNodeById(id)
         localDataSource.deleteNode(nodeEntity)
     }
+    
+    override fun updateNode(nodeDto: NodeDto) {
+        val nodeEntity = NodeDtoMapper.mapNodeDtoToEntity(nodeDto)
+        localDataSource.updateYearNodeItem(nodeEntity)
+    }
 }

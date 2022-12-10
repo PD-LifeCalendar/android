@@ -32,4 +32,9 @@ class DomainModule {
     fun provideDeleteNodeByIdUseCase(nodeRepository: NodeRepository): DeleteNodeByIdUseCase {
         return DeleteNodeByIdUseCase(nodeRepository = nodeRepository)
     }
+    
+    @Provides
+    fun provideUpdateNodeUseCase(nodeRepository: NodeRepository): UpdateNodeUseCase {
+        return UpdateNodeUseCase(nodeRepository = nodeRepository)
+    }
 }

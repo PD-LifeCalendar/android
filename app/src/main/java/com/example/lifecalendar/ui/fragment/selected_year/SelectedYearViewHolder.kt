@@ -12,5 +12,7 @@ class SelectedYearViewHolder(private val binding: ItemGoalBinding) : RecyclerVie
         goalDescription.isVisible = node.description.isNotEmpty()
         
         deleteBtn.setOnClickListener { listener.deleteNodeById(node.nodeId) }
+        
+        itemView.setOnClickListener { listener.updateNode(node) }
     }
 }

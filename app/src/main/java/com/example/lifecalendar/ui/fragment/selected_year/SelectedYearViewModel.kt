@@ -14,8 +14,7 @@ import kotlinx.coroutines.launch
 class SelectedYearViewModel(
     private val fetchYearNodesUseCase: FetchYearNodesUseCase,
     private val deleteNodeByIdUseCase: DeleteNodeByIdUseCase
-) :
-    ViewModel() {
+) : ViewModel() {
     
     private val _selectedYearUiModelLiveData: MutableLiveData<SelectedYearUiModel> =
         MutableLiveData()

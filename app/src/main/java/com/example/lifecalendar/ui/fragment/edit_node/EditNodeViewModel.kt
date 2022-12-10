@@ -1,15 +1,16 @@
-package com.example.lifecalendar.ui.fragment.add_node
+package com.example.lifecalendar.ui.fragment.edit_node
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.lifecalendar.domain.model.NodeDto
-import com.example.lifecalendar.domain.usecase.AddYearNodeUseCase
+import com.example.lifecalendar.domain.repository.NodeRepository
+import com.example.lifecalendar.domain.usecase.UpdateNodeUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
-class AddNodeViewModel(private val addYearNodeUseCase: AddYearNodeUseCase) : ViewModel() {
+class EditNodeViewModel(private val updateNodeUseCase: UpdateNodeUseCase) : ViewModel() {
     
     private val messageChannel = Channel<String>()
     val messageFlow get() = messageChannel.receiveAsFlow()
@@ -17,14 +18,13 @@ class AddNodeViewModel(private val addYearNodeUseCase: AddYearNodeUseCase) : Vie
     private val successChannel = Channel<Boolean>()
     val successFlow get() = successChannel.receiveAsFlow()
     
-    fun addYearNode(year: Int, title: String, description: String) {
+    fun updateNode(nodeId: Int, year: Int, title:String, description: String) {
         viewModelScope.launch(Dispatchers.IO) {
             if (isTitleValid(title)) {
                 try {
-                    // TODO: Сделать маппер
-                    addYearNodeUseCase.addYearNodeItem(
+                    updateNodeUseCase.updateNode(
                         NodeDto(
-                            nodeId = 0,
+                            nodeId = nodeId,
                             year = year,
                             title = title,
                             description = description
@@ -35,7 +35,6 @@ class AddNodeViewModel(private val addYearNodeUseCase: AddYearNodeUseCase) : Vie
                     successChannel.send(false)
                 }
             }
-            
         }
     }
     
