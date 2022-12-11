@@ -12,18 +12,18 @@ class LifeCalendarViewModel : ViewModel() {
     private val _lifeCalendarUiModelLiveData: MutableLiveData<List<LifeCalendarUiModel>> = MutableLiveData()
     val lifeCalendarUiModelLiveData: LiveData<List<LifeCalendarUiModel>> get() = _lifeCalendarUiModelLiveData
     
-    fun calculateYearsOld(birthdateTimestamp: Long) {
+    fun calculateYearsOld(birthdateTimestamp: Long, yearsCount: Int) {
         val birthdate = DateConverter().timestampToLocalDateTime(birthdateTimestamp)
         val yearNow = LocalDateTime.now().year
         val birthdateYear = birthdate.year
         val yearsOld = yearNow - birthdateYear
-        val uiModelList = getUiModelList(yearsOld)
+        val uiModelList = getUiModelList(yearsOld, yearsCount)
         _lifeCalendarUiModelLiveData.postValue(uiModelList)
     }
     
-    private fun getUiModelList(yearsOld: Int): List<LifeCalendarUiModel> {
+    private fun getUiModelList(yearsOld: Int, yearsCount: Int): List<LifeCalendarUiModel> {
         val lifeCalendarUiModelList = mutableListOf<LifeCalendarUiModel>()
-        for (year in 1..100) {
+        for (year in 1..yearsCount) {
             val lifeCalendarUiModel = LifeCalendarUiModel(year = year.toString(), yearsOld.toString())
             lifeCalendarUiModelList.add(lifeCalendarUiModel)
         }

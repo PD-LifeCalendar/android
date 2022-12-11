@@ -1,17 +1,12 @@
-package com.example.lifecalendar.ui.fragment.profile
+package com.example.lifecalendar.ui.fragment.registration
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.lifecalendar.R
-import com.example.lifecalendar.databinding.FragmentLoginBinding
 import com.example.lifecalendar.databinding.FragmentRegistrationBinding
 import com.example.lifecalendar.utils.ToastMaker
-import com.google.android.material.button.MaterialButton
 
 class RegistrationFragment : Fragment(), ToastMaker {
     private lateinit var binding: FragmentRegistrationBinding
@@ -28,7 +23,7 @@ class RegistrationFragment : Fragment(), ToastMaker {
     private fun reg() {
         val name = binding.nameInput.text.toString().trim()
         val password = binding.regPasswordInput.text.toString().trim()
-        var mail = binding.mailInput.text.toString().trim()
+        val mail = binding.mailInput.text.toString().trim()
         if(!isValidName(name)) {
             makeLongToast(requireContext() , "is not valid name")
         } else if (!isValidPassword(password)) {

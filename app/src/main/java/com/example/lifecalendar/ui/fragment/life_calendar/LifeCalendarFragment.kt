@@ -12,6 +12,7 @@ import com.example.lifecalendar.databinding.FragmentLifeCalendarBinding
 import com.example.lifecalendar.utils.FragmentMVVM
 import com.example.lifecalendar.utils.ToastMaker
 import com.example.lifecalendar.data.source.local.prefs.BirthdateManager
+import com.example.lifecalendar.data.source.local.prefs.YearsCountManager
 import javax.inject.Inject
 
 class LifeCalendarFragment : Fragment(), ToastMaker, FragmentMVVM {
@@ -22,15 +23,16 @@ class LifeCalendarFragment : Fragment(), ToastMaker, FragmentMVVM {
 
     @Inject
     lateinit var viewModelFactory: LifeCalendarViewModelFactory
-    
     @Inject
     lateinit var birthdateManager: BirthdateManager
+    @Inject
+    lateinit var yearsCountManager: YearsCountManager
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         (requireContext().applicationContext as App).appComponent.inject(this)
         initViewModel()
-        viewModel.calculateYearsOld(birthdateManager.getBirthdate())
+        calculateYearsOld()
     }
     
     override fun onCreateView(
@@ -43,8 +45,17 @@ class LifeCalendarFragment : Fragment(), ToastMaker, FragmentMVVM {
         return binding.root
     }
     
-    override fun onResume() {
-        super.onResume()
+    // TODO: Избавиться от костыля
+    override fun onStart() {
+        super.onStart()
+        calculateYearsOld()
+    }
+    
+    private fun calculateYearsOld() {
+        val yearsCount = yearsCountManager.getYearsCount()
+        if (yearsCount != null) {
+            viewModel.calculateYearsOld(birthdateManager.getBirthdate(), yearsCount.toInt())
+        } else viewModel.calculateYearsOld(birthdateManager.getBirthdate(),  100)
     }
 
     override fun initViewModel() {
@@ -54,7 +65,7 @@ class LifeCalendarFragment : Fragment(), ToastMaker, FragmentMVVM {
 
     private fun setupRecycler() {
         adapter = LifeCalendarAdapter()
-        val layoutManager = GridLayoutManager(context, 8)
+        val layoutManager = GridLayoutManager(context, 7)
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter
     }

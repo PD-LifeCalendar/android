@@ -27,6 +27,7 @@ class LifeCalendarAdapter : RecyclerView.Adapter<LifeCalendarViewHolder>() {
 
     fun setData(lifeCalendarUiModelList: List<LifeCalendarUiModel>) {
         this.lifeCalendarUiModelList = lifeCalendarUiModelList
+        notifyDataSetChanged()
     }
 
 }

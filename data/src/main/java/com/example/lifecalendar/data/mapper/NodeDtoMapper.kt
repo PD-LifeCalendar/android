@@ -29,4 +29,12 @@ object NodeDtoMapper {
             description = nodeEntity.description,
             year = nodeEntity.year,
         )
+    
+    fun mapNodeDtoToEntityToUpdate(nodeDto: NodeDto): NodeEntity =
+        NodeEntity(
+            id = nodeDto.nodeId,
+            year = nodeDto.year,
+            title = nodeDto.title,
+            description = nodeDto.description
+        )
 }

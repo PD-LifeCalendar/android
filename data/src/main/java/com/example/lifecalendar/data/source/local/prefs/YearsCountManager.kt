@@ -4,21 +4,21 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.example.data.R
 
-class BirthdateManager(context: Context) {
+class YearsCountManager(context: Context) {
     private var prefs: SharedPreferences =
         context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
     
     companion object {
-        const val BIRTHDATE = "birthdate"
+        const val YEARS_COUNT = "years_count"
     }
     
-    fun saveBirthdate(birthdate: Long) {
-        prefs.edit().putLong(BIRTHDATE, birthdate).apply()
+    fun saveYearsCount(yearsCount: String) {
+        prefs.edit().putString(YEARS_COUNT, yearsCount).apply()
     }
     
-    fun getBirthdate(): Long = prefs.getLong(BIRTHDATE, 0)
+    fun getYearsCount(): String? = prefs.getString(YEARS_COUNT, null)
     
-    fun deleteBirthdate() {
-        prefs.edit().putLong(BIRTHDATE, 0).apply()
+    fun deleteYearsCount() {
+        prefs.edit().putString(YEARS_COUNT, null).apply()
     }
 }

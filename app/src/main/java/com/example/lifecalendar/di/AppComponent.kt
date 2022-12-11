@@ -8,7 +8,9 @@ import com.example.lifecalendar.ui.fragment.edit_node.EditNodeFragment
 import com.example.lifecalendar.ui.fragment.greeting.GreetingFragment
 import com.example.lifecalendar.ui.fragment.life_calendar.LifeCalendarFragment
 import com.example.lifecalendar.ui.fragment.login.LoginFragment
+import com.example.lifecalendar.ui.fragment.profile.ProfileFragment
 import com.example.lifecalendar.ui.fragment.selected_year.SelectedYearFragment
+import com.example.lifecalendar.ui.fragment.settings.SettingsFragment
 import dagger.Component
 
 @Component(modules = [AppModule::class, DataModule::class, DomainModule::class])
@@ -22,4 +24,6 @@ interface AppComponent {
     fun inject(registrationBirthdateFragment: RegistrationBirthdateFragment)
     fun inject(addNodeFragment: AddNodeFragment)
     fun inject(editNodeFragment: EditNodeFragment)
+    fun inject(settingsFragment: SettingsFragment)
+    fun inject(profileFragment: ProfileFragment)
 }

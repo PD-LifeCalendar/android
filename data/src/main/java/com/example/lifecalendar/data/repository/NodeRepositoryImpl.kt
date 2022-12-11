@@ -22,7 +22,7 @@ class NodeRepositoryImpl(private val localDataSource: LocalDataSource) : NodeRep
     }
     
     override fun updateNode(nodeDto: NodeDto) {
-        val nodeEntity = NodeDtoMapper.mapNodeDtoToEntity(nodeDto)
+        val nodeEntity = NodeDtoMapper.mapNodeDtoToEntityToUpdate(nodeDto)
         localDataSource.updateYearNodeItem(nodeEntity)
     }
 }

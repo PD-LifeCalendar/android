@@ -11,7 +11,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.lifecalendar.App
 import com.example.lifecalendar.R
+import com.example.lifecalendar.data.source.local.db.dao.NodeDao
+import com.example.lifecalendar.data.source.local.db.model.NodeEntity
+import com.example.lifecalendar.data.source.remote.LifeCalendarService
 import com.example.lifecalendar.databinding.FragmentAddNodeBinding
+import com.example.lifecalendar.domain.model.NodeDto
 import com.example.lifecalendar.ui.fragment.add_node.AddNodeViewModel
 import com.example.lifecalendar.utils.ToastMaker
 import javax.inject.Inject
@@ -59,8 +63,8 @@ class EditNodeFragment : Fragment(), ToastMaker {
         viewModel.updateNode(
             nodeId = args.id,
             year = args.year,
-            title,
-            description
+            title = title,
+            description = description
         )
     }
     

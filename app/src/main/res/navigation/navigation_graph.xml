@@ -19,7 +19,7 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_greetingFragment_to_lifeCalendarFragment"
-            app:destination="@id/lifeCalendarFragment" />
+            app:destination="@id/life_calendar_fragment" />
     </fragment>
     <fragment
         android:id="@+id/greetingSecondFragment"
@@ -33,93 +33,17 @@
             app:destination="@id/registrationBirthdateFragment" />
     </fragment>
     <fragment
-        android:id="@+id/registrationNameFragment"
-        android:name="com.example.lifecalendar.ui.fragment.old.RegistrationNameFragment"
-        android:label="RegistrationNameFragment" >
-        <action
-            android:id="@+id/action_registrationNameFragment_to_registrationEmailFragment"
-            app:destination="@id/registrationEmailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/registrationEmailFragment"
-        android:name="com.example.lifecalendar.ui.fragment.old.FragmentRegistrationEmail"
-        android:label="RegistrationEmailFragment">
-        <action
-            android:id="@+id/action_fragmentRegistrationEmail_to_registrationMailCode"
-            app:destination="@id/registrationMailCode" />
-        <action
-            android:id="@+id/action_registrationEmailFragment_to_registrationNameFragment"
-            app:destination="@id/registrationNameFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/registrationMailCode"
-        android:name="com.example.lifecalendar.ui.fragment.old.RegistrationMailCode"
-        android:label="RegistrationMailCode" >
-        <action
-            android:id="@+id/action_registrationMailCode_to_registrationPasswordFragment"
-            app:destination="@id/registrationPasswordFragment" />
-        <action
-            android:id="@+id/action_registrationMailCode_to_fragmentRegistrationEmail"
-            app:destination="@id/registrationEmailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/registrationPasswordFragment"
-        android:name="com.example.lifecalendar.ui.fragment.old.RegistrationPasswordFragment"
-        android:label="RegistrationPasswordFragment" >
-        <action
-            android:id="@+id/action_registrationPasswordFragment_to_registrationMailCode"
-            app:destination="@id/registrationMailCode" />
-    </fragment>
-    <fragment
         android:id="@+id/registrationBirthdateFragment"
         android:name="com.example.lifecalendar.ui.fragment.birthdate.RegistrationBirthdateFragment"
         android:label="RegistrationBirthdateFragment" >
         <action
             android:id="@+id/action_registrationBirthdateFragment_to_lifeCalendarFragment"
-            app:destination="@id/lifeCalendarFragment"
+            app:destination="@id/life_calendar_fragment"
             app:popUpTo="@id/navigation_graph"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_registrationBirthdateFragment_to_greetingSecondFragment"
             app:destination="@id/greetingSecondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/registrationGenderFragment"
-        android:name="com.example.lifecalendar.ui.fragment.old.RegistrationGenderFragment"
-        android:label="RegistrationGenderFragment" >
-        <action
-            android:id="@+id/action_registrationGenderFragment_to_registrationCareerFragment"
-            app:destination="@id/registrationCareerFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/registrationCareerFragment"
-        android:name="com.example.lifecalendar.ui.fragment.old.RegistrationCareerFragment"
-        android:label="RegistrationCareerFragment" >
-        <action
-            android:id="@+id/action_registrationCareerFragment_to_registrationStatusFragment"
-            app:destination="@id/registrationStatusFragment" />
-        <action
-            android:id="@+id/action_registrationCareerFragment_to_registrationGenderFragment"
-            app:destination="@id/registrationGenderFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/registrationStatusFragment"
-        android:name="com.example.lifecalendar.ui.fragment.old.RegistrationStatusFragment"
-        android:label="RegistrationStatusFragment" >
-        <action
-            android:id="@+id/action_registrationStatusFragment_to_registrationAvatarFragment"
-            app:destination="@id/registrationAvatarFragment" />
-        <action
-            android:id="@+id/action_registrationStatusFragment_to_registrationCareerFragment"
-            app:destination="@id/registrationCareerFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/registrationAvatarFragment"
-        android:name="com.example.lifecalendar.ui.fragment.old.RegistrationAvatarFragment"
-        android:label="RegistrationAvatarFragment" >
-        <action
-            android:id="@+id/action_registrationAvatarFragment_to_registrationStatusFragment"
-            app:destination="@id/registrationStatusFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -128,12 +52,12 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_lifeCalendarFragment"
-            app:destination="@id/lifeCalendarFragment" />
+            app:destination="@id/life_calendar_fragment" />
     </fragment>
     <fragment
-        android:id="@+id/lifeCalendarFragment"
+        android:id="@+id/life_calendar_fragment"
         android:name="com.example.lifecalendar.ui.fragment.life_calendar.LifeCalendarFragment"
-        android:label="LifeCalendarFragment" >
+        android:label="Календарь жизни" >
         <action
             android:id="@+id/action_lifeCalendarFragment_to_selectedYearFragment"
             app:destination="@id/selectedYearFragment" />
@@ -182,4 +106,14 @@
             android:name="description"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.lifecalendar.ui.fragment.settings.SettingsFragment"
+        android:label="Настройки"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.lifecalendar.ui.fragment.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
