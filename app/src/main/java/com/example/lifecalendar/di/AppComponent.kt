@@ -5,6 +5,7 @@ import com.example.lifecalendar.MainActivity
 import com.example.lifecalendar.ui.fragment.add_node.AddNodeFragment
 import com.example.lifecalendar.ui.fragment.birthdate.RegistrationBirthdateFragment
 import com.example.lifecalendar.ui.fragment.edit_node.EditNodeFragment
+import com.example.lifecalendar.ui.fragment.goals.GoalsFragment
 import com.example.lifecalendar.ui.fragment.greeting.GreetingFragment
 import com.example.lifecalendar.ui.fragment.life_calendar.LifeCalendarFragment
 import com.example.lifecalendar.ui.fragment.login.LoginFragment
@@ -20,6 +21,7 @@ interface AppComponent {
     fun inject(loginFragment: LoginFragment)
     fun inject(lifeCalendarFragment: LifeCalendarFragment)
     fun inject(selectedYearFragment: SelectedYearFragment)
+    fun inject(goalsFragment: GoalsFragment)
     fun inject(greetingFragment: GreetingFragment)
     fun inject(registrationBirthdateFragment: RegistrationBirthdateFragment)
     fun inject(addNodeFragment: AddNodeFragment)
