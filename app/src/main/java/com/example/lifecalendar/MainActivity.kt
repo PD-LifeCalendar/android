@@ -43,6 +43,8 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.settings -> showTopBar()
+                R.id.optGoal -> showTopBar()
+                R.id.optAchievement -> showTopBar()
                 R.id.profile -> showTopBar()
                 R.id.life_calendar_fragment -> showTopBar()
                 else -> goneTopBar()

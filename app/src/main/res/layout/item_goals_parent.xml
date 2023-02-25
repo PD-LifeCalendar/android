@@ -7,9 +7,19 @@
     android:layout_height="wrap_content"
     android:background="@color/beige"
     android:layout_marginVertical="10dp"
-    android:layout_marginHorizontal="16dp">
+    android:layout_marginHorizontal="16dp"
+    app:cardCornerRadius="15dp">
 
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listGoalsRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/yearNumber"
+        app:layout_constraintRight_toRightOf="parent"
+        />
     <TextView
         android:id="@+id/yearNumber"
         android:layout_width="wrap_content"
@@ -22,17 +32,7 @@
         app:layout_constraintLeft_toLeftOf="@id/child"
         app:layout_constraintBottom_toBottomOf="@id/child"
         android:layout_margin="10dp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listGoalsRecyclerView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/yearNumber"
-        app:layout_constraintRight_toRightOf="parent"
-        />
+    />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
