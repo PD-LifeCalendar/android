@@ -2,6 +2,7 @@ package com.example.lifecalendar.di
 
 import android.content.Context
 import com.example.lifecalendar.domain.usecase.*
+import com.example.lifecalendar.ui.fragment.achievements.AchievementsViewModelFactory
 import com.example.lifecalendar.ui.fragment.add_node.AddNodeViewModelFactory
 import com.example.lifecalendar.ui.fragment.edit_node.EditNodeViewModelFactory
 import com.example.lifecalendar.ui.fragment.goals.GoalsViewModelFactory
@@ -38,6 +39,11 @@ class AppModule(val context: Context) {
     @Provides
     fun provideGoalsModuleFactory(): GoalsViewModelFactory {
         return GoalsViewModelFactory()
+    }
+
+    @Provides
+    fun provideAchievementsModuleFactory(): AchievementsViewModelFactory {
+        return AchievementsViewModelFactory()
     }
 
     @Provides
