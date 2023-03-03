@@ -63,6 +63,7 @@
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registrationFragment"/>
+
     </fragment>
     <fragment
         android:id="@+id/life_calendar_fragment"

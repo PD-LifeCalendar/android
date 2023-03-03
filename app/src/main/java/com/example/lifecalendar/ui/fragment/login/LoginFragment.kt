@@ -98,6 +98,5 @@ class LoginFragment : Fragment(), ToastMaker {
     private fun navigateToRegistrationFragment() {
             val action = LoginFragmentDirections.actionLoginFragmentToRegistrationFragment()
             findNavController().navigate(action)
-
     }
 }
