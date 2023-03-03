@@ -34,6 +34,7 @@ class LoginFragment : Fragment(), ToastMaker {
     ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         binding.loginBtn.setOnClickListener { login() }
+        binding.registrationText.setOnClickListener { navigateToRegistrationFragment() }
 
         lifecycleScope.launchWhenStarted {
             viewModel.loginFailedFlow.collect { errorMessage ->
@@ -95,6 +96,7 @@ class LoginFragment : Fragment(), ToastMaker {
     }
 
     private fun navigateToRegistrationFragment() {
-        // TODO()
+            val action = LoginFragmentDirections.actionLoginFragmentToRegistrationFragment()
+            findNavController().navigate(action)
     }
 }
