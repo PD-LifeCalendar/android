@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.lifecalendar.App
+import com.example.lifecalendar.data.source.local.prefs.SessionManager
 import com.example.lifecalendar.databinding.FragmentLoginBinding
 import com.example.lifecalendar.utils.ToastMaker
 import javax.inject.Inject
@@ -20,6 +21,8 @@ class LoginFragment : Fragment(), ToastMaker {
 
     @Inject
     lateinit var viewModelFactory: LoginViewModelFactory
+    @Inject
+    lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,11 +58,15 @@ class LoginFragment : Fragment(), ToastMaker {
     private fun login() {
         val name = binding.nameInput.text.toString().trim()
         val password = binding.passwordInput.text.toString().trim()
-        if(!isValidName(name)) {
+        if(isValidName(name)) {
             makeLongToast(requireContext() , "is not valid name")
-        } else if (!isValidPassword(password)) {
+        } else if (isValidPassword(password)) {
             makeLongToast(requireContext() , "is not valid password")
-        } else viewModel.login(name = name, password = password)
+        } else {
+            viewModel.login(name = name, password = password)
+            android.os.Handler().postDelayed({viewModel.refreshToken(sessionManager.getRefreshToken()!!)}, 5000)
+
+        }
     }
 
     private fun isValidPassword(password: String?) : Boolean {
